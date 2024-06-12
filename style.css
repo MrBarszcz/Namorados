@@ -1,0 +1,199 @@
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #fae1dd;
+}
+
+.container {
+    position: relative;
+}
+
+.valentines-day {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+.carta {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #f08080;
+    display: grid;
+    place-items: center;
+}
+
+.carta:before {
+    content: '';
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background: #f08080;
+    transform: rotate(45deg);
+    top: -106px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+
+.carta-fechada {
+
+}
+
+.frente {
+    position: absolute;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.frente:before {
+    position: absolute;
+    content: '';
+    border-left: 300px solid #fda996;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+}
+
+.papel {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    background: #fff;
+    border-radius: 2px;
+    display: grid;
+    place-items: center;
+    transition: 1s;
+}
+
+.papel:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #003049;
+    border-style: dashed;
+
+}
+
+.valentines-day:hover .papel {
+    transform: translateY(-100px);
+}
+
+.papel .mensagem {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    text-align: center;
+    line-height: 38px;
+    color: #003049;
+}
+
+.papel .cacto {
+    position: relative;
+    width: 35px;
+    height: 50px;
+    background: green;
+
+}
+
+.cactus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cactus {
+    position: relative;
+    width: 20px;
+    height: 45px;
+    background-color: green;
+    border-radius: 10px 10px 0 0;
+}
+
+.cactus .arm-left, .cactus .arm-right {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.cactus .arm-left {
+    left: -10px;
+    top: 10px;
+}
+
+.cactus .arm-right {
+    right: -10px;
+    top: 10px;
+}
+
+.pot {
+    width: 40px;
+    height: 12px;
+    background-color: sienna;
+    border-radius: 5px;
+    margin-top: -5px;
+}
+
+.base {
+    width: 25px;
+    height: 13px;
+    background-color: sienna;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+@keyframes up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.valentines-day::before {
+    content: '';
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    top: 265px;
+    left: -15px;
+    animation: scale 3s linear infinite;
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(.85);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .valentines-day {
+        top: 0;
+    }
+
+    .valentines-day::before {
+        top: 200px;
+    }
+}
+
+
